@@ -1,0 +1,35 @@
+{
+  "light": {
+    "FONT_COLOR": "#ffffff",
+    "TEXT_COLOR": "#000000",
+    "TEXT_DISABLED_COLOR": "#222222",
+
+    "FIRST_MAIN_COLOR": "#ececec",
+    "SECOND_MAIN_COLOR": "#d3d3d3",
+    "THIRD_MAIN_COLOR": "#c5c5c5",
+    "FOURTH_MAIN_COLOR": "#e1e1e1",
+
+    "PLACEHOLDER_COLOR": "#b6b6b6",
+    "HIGHLIGHT_COLOR": "#5b5e63",
+    "BORDER_COLOR": "#d0d0d0",
+
+    "SECONDARY_COLOR": "#4897fe"
+  },
+
+  "dark": {
+    "FONT_COLOR": "#f2f2f2",
+    "TEXT_COLOR": "#ffffff",
+    "TEXT_DISABLED_COLOR": "#777777",
+
+    "FIRST_MAIN_COLOR": "#1e1f21",
+    "SECOND_MAIN_COLOR": "#282a2d",
+    "THIRD_MAIN_COLOR": "#323438",
+    "FOURTH_MAIN_COLOR": "#242528",
+
+    "PLACEHOLDER_COLOR": "#777a7e",
+    "HIGHLIGHT_COLOR": "#5b5e63",
+    "BORDER_COLOR": "#3b3d41",
+
+    "SECONDARY_COLOR": "#4897fe"
+  }
+}
