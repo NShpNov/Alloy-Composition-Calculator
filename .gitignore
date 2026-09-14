@@ -1,0 +1,6 @@
+.venv
+__pycache__
+*.ico
+alloys.json
+user_data.json
+build

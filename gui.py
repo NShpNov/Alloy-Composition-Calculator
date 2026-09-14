@@ -20,6 +20,15 @@ from parcer import ScanCancelled, update_alloys as refresh_alloys_data
 from logic.crucible import expand_batch_usage, pack_batches_into_crucibles
 from logic.optimization import calculate_max_composition_amount
 from PIL import Image, ImageTk
+from pathlib import Path
+import sys
+
+
+def resource_path(filename):
+    if getattr(sys, "frozen", False):
+        return Path(sys._MEIPASS) / filename
+
+    return Path(__file__).resolve().parent / filename
 
 BASE_DIR = Path(__file__).resolve().parent
 ADD_ALLOY = "Add alloy"
@@ -47,7 +56,8 @@ class AlloyApp(ctk.CTk):
 		self.user_data = self.load_user_data()
 		self.side_panel_open = False
 		self.wm_iconbitmap()
-		img = ImageTk.PhotoImage(Image.open("icon.png"), master=self)
+		img_path = BASE_DIR / "icon.png"
+		img = ImageTk.PhotoImage(Image.open(img_path), master=self)
 		self.iconphoto(True, img)
 		self._icon_ref = img
 		self.title("Alloy Calculator")
@@ -653,7 +663,7 @@ class AlloyApp(ctk.CTk):
 			batch_121.grid(row=0, column=0, padx=(0, 3))
 			batch_144.grid(row=0, column=1, padx=(0, 3))
 			split_check.grid(row=0, column=2, padx=(0, 3))
-			priority_frame = ctk.CTkFrame(self.content, fg_color=self.colors[self.current_theme]["THIRD_MAIN_COLOR"])
+			priority_frame = ctk.CTkFrame(self.content)
 			priority_frame.grid(row=row, column=1, padx=3, pady=5, sticky="ew")
 			priority_frame.grid_columnconfigure(0, weight=1)
 			priority = ctk.CTkSlider(
@@ -1478,7 +1488,7 @@ class RecursiveAlloyWindow(ctk.CTkToplevel):
 			ctk.CTkLabel(
 				self.content, text=data.get("name", name), anchor="w"
 			).grid(row=row, column=0, padx=8, pady=5, sticky="w")
-			priority_frame = ctk.CTkFrame(self.content, fg_color=self.colors[self.current_theme]["THIRD_MAIN_COLOR"])
+			priority_frame = ctk.CTkFrame(self.content)
 			priority_frame.grid(row=row, column=1, padx=3, pady=5, sticky="ew")
 			priority_frame.grid_columnconfigure(0, weight=1)
 			priority = ctk.CTkSlider(
